@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import PageHeader from './components/PageHeader.vue'
+import CountryList from './components/CountryList.vue'
 import axiosClient from './utils/axios'
-const countries = ref([]);
+import type { Country } from './models/country.models';
+const countries = ref<Country[]>([]);
 
 const fetchCountries = async () => {
   try{
@@ -21,5 +23,8 @@ onMounted(() => {
 
 <template>
   <PageHeader/>
-  <div v-for="country in countries">{{ country.name.common }}</div>
+  <div class="container max-w-5xl mx-auto px-6">
+    <CountryList :countries="countries"/>
+  </div>
+  
 </template>
