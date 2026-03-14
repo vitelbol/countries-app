@@ -2,5 +2,5 @@
 </script>
 
 <template>
-  <h1>Countries app</h1>
+  <h1 class="text-3xl font-bold underline">Countries app</h1>
 </template>
